@@ -3,7 +3,7 @@ title:some
 output:html_document
 ---
 ```{r}
-setwd("/mnt/d/R")
+setwd(".")
 wine <- read.csv("wine.csv")
 
 ```
