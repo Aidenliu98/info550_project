@@ -1,4 +1,4 @@
-#MY PROJECT
+# MY PROJECT
 In my project, I will analyze the wine.csv data
 To analyze it , we need to install some R packages. You can install the packages by the following code.
 ```{r}
@@ -12,7 +12,7 @@ for (p in pkgs){
 
 ```
 
-#EXECUTE THE ANALYSIS
+# EXECUTE THE ANALYSIS
 If you want to execute my analysis, you can run the following code from the folder
 ```{linux}
 
