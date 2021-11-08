@@ -1,0 +1,62 @@
+---
+title: "My project"
+author: "Aiden Liu"
+output: html_document
+---
+
+```{r, include = FALSE}
+here::i_am("Rmd/report.Rmd")
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+
+```{r}
+setwd(".")
+wine <- read.csv("./wine.csv")
+
+```
+1.data cleaning  
+Since I get the data from a standrad data website, the data cleaning step won't take much work.
+```{r}
+which(is.na(wine))
+
+```
+
+2.some figures
+```{r}
+hist(wine[,2],
+     main="Histogram of Volatile Acidity",
+     xlab="volatile acidity",
+     ylab="number",
+     breaks=8 ,
+     col ="yellow")
+plot(x=wine$pH,
+     y=wine$quality,
+     xlab="pH",
+     ylab="quality",
+     col ="blue",
+     main="scatters of pH and quality"
+)
+boxplot(wine$pH ~ wine$quality,
+        main="Boxplots of pH by quality",
+        xlab="quality",
+        ylab="pH",
+        col=c("red","orange","yellow","green","blue","purple"),
+        names= c("3","4","5","6","7","8")
+)
+```
+3.decription of analysis
+According to the plots above, we can find there might be a negative correlation between the pH of a bottle of wine and its quality.
+
+```{r}
+
+ph <- lm(wine$pH ~ wine$quality, data = wine)
+summary(ph)
+```
+After this step, it seems that there is a negative correlation within the two variables.  
+However, we need further analysis to verify this conclusion.
+Also we can find some basic statistical information of the data in the dataset.
+```{r}
+summary(wine)
+```
+Now,by fewer analysing on the data, we have a elementary understanding of our data and make our first step to the relations between the quality of a bottle of wine and its quality. 

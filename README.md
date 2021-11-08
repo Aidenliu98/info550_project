@@ -5,7 +5,7 @@ To analyze it , we need to install some `R` packages. You can install the packag
 installed_pksg <- row.names(installed.packages())
 pkgs<-c("ggpolt2", "car", "MASS")
 for (p in pkgs){
-	if(!(p %in% install_pkgs)){
+	if(!(p %in% installed_pksg)){
 		install.packages(p)
 	}
 }
@@ -15,6 +15,6 @@ for (p in pkgs){
 ## EXECUTE THE ANALYSIS
 If you want to execute my analysis, you can run the following code from the folder
 ```bash
-Rscript -e "rmarkdown::render('report.Rmd')"
+Rscript -e "rmarkdown::render('report.rmd')"
 ```
 And then you will create a file called report.html , which will contain the results of my project.
