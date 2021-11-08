@@ -11,7 +11,7 @@ knitr::opts_knit$set(root.dir = here::here())
 
 
 ```{r}
-setwd(".")
+setwd("..")
 wine <- read.csv("./wine.csv")
 
 ```
