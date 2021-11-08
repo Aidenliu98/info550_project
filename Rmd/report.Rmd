@@ -11,8 +11,7 @@ knitr::opts_knit$set(root.dir = here::here())
 
 
 ```{r}
-setwd("..")
-wine <- read.csv("wine.csv")
+wine <- read.csv(here::here('data','wine.csv'))
 
 ```
 1.data cleaning  
