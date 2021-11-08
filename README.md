@@ -12,5 +12,5 @@ make report
 ```
 And then you will create a file called report.html , which will contain the results of my project.
 
-## CHECK YOUR RESULT
+## CHECK THE RESULT
 You can open `Rmd/report` to check the plot and result,
