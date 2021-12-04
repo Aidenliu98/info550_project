@@ -1,6 +1,17 @@
-FROM ubuntu
-run renv::restore()
+FROM rocker/tidyverse
 
-run make report
+RUN mkdir project
 
-CMD echo "here you can get the report of my project successfully"
+COPY ./ /project/
+
+RUN chmod +x /project/Rmd/report.Rmd
+
+WORKDIR /project
+
+RUN Rscript -e "install.packages('renv')"
+
+RUN Rscript -e "renv::restore(prompt=FALSE)"
+
+RUN mkdir aaa
+
+CMD make report
